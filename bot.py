@@ -49,6 +49,16 @@ class BotHandler:
     def __init__(self, token):
         self.token = token
         self.api_url = "https://api.telegram.org/bot{}/".format(token)
+	
+def get_text_messages(message)
+@bot.message_handler(content_types=['text', 'document', 'audio'])
+
+if message.text == "Привет"
+    bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
+elif message.text == "/help"
+    bot.send_message(message.from_user.id, "Напиши привет")
+else
+    bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
     def get_updates(self, offset=None, timeout=30):
         method = 'getUpdates'
