@@ -56,6 +56,14 @@ class BotHandler:
         resp = requests.get(self.api_url + method, params)
         result_json = resp.json()['result']
         return result_json
+    
+    def get_text_messages(message)
+	    if message.text == "Привет"
+             bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
+        elif message.text == "/help"
+             bot.send_message(message.from_user.id, "Напиши привет")
+        else
+             bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")  
 
     def send_message(self, chat_id, text):
         params = {'chat_id': chat_id, 'text': text}
@@ -103,6 +111,10 @@ def main():
 
         elif last_chat_text.lower() in greetings and today == now.day and 17 <= hour < 23:
             greet_bot.send_message(last_chat_id, 'Добрый вечер, {}'.format(last_chat_name))
+            today += 1
+		
+	elif last_chat_text.lower() in greetings and today == now.day and 23 <= hour < 6:
+            greet_bot.send_message(last_chat_id, 'Добрый Ночи, {}'.format(last_chat_name))
             today += 1
 
         new_offset = last_update_id + 1
