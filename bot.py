@@ -55,15 +55,7 @@ class BotHandler:
         params = {'timeout': timeout, 'offset': offset}
         resp = requests.get(self.api_url + method, params)
         result_json = resp.json()['result']
-        return result_json
-    
-    def get_text_messages(message)
-	    if message.text == "Привет"
-             bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
-        elif message.text == "/help"
-             bot.send_message(message.from_user.id, "Напиши привет")
-        else
-             bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")  
+        return result_json  
 
     def send_message(self, chat_id, text):
         params = {'chat_id': chat_id, 'text': text}
